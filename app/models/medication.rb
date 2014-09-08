@@ -1,5 +1,5 @@
 class Medication < ActiveRecord::Base
 
-  belongs_to :patient
+  has_many :patients, :through => :prescription
 
 end

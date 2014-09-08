@@ -4,7 +4,5 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: {case_sensitive: false}
   validates :name, presence: true, uniqueness: {case_sensitive: false}
 
-  has_many :medications
-  has_many :patients
 
 end
