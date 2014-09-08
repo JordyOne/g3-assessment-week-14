@@ -12,12 +12,12 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <% @prescriptions.each do |prescription| %>
+  <% @prescriptions.each do |prescription| %>
+      <tr>
         <td><%= @medications.find_by(id: prescription.medication_id).name %></td>
         <td><%= prescription.dosage %>/<%= prescription.schedule %></td>
         <td><%= prescription.start_on %></td>
-    <% end %>
-  </tr>
+      </tr>
+  <% end %>
   </tbody>
 </table>
