@@ -1,0 +1,18 @@
+<h1>Add a Prescription to <%= full_name(@patient) %></h1>
+
+<form class="medication-form" action="<%= patient_prescriptions_path(@patient.id) %>" method="POST">
+
+  <label for="Medication">Medication</label>
+  <select name="Medication">
+    <option value="" disabled="disabled" selected="selected">Please Choose a Medication</option>
+    <%= @medications.each do |medication| %>
+    <option value="<%= medication.name %>" id="Medication"><%= medication.name %></option>
+        <% end %>
+  </select><br>
+  Dosage: <input type="text" name="dosage" value="ex. 4 mL or 3 pills"><br>
+  Schedule: <input type="text" name="schedule" value="ex. every 4 hours "><br>
+  Starts on: <input type="date" name="starts_on" value="<%= Date.today %>"><br>
+  Ends on:   <input type="date" name="ends_on" value="<%= Date.today + 2.months %>"><br>
+
+  <input type="submit" value="Create Prescription">
+</form>

@@ -1,6 +1,6 @@
 <h1><%= full_name(@patient) %></h1>
 
-<h2>Prescriptions</h2><a class="new-prescription-link" href="<%= new_medication_path %>">Add Prescription</a>
+<h2>Prescriptions</h2><a class="new-prescription-link" href="<%= new_patient_prescription_path(@patient.id) %>">Add Prescription</a>
 
 <h2>Medications</h2>
 <table class="table">
@@ -13,9 +13,11 @@
   </thead>
   <tbody>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <%= @prescriptions.each do |prescription| %>
+    <td><%= prescription.name %></td>
+    <td><%= prescription.dosage %>/<%=prescription.schedule %></td>
+    <td><%= prescription.start_on  %></td>
+ <% end %>
   </tr>
   </tbody>
 </table>

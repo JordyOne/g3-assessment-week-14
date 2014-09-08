@@ -20,5 +20,4 @@ feature "Patients" do
 
     expect(page).to have_content("Some Patient")
   end
-
 end
