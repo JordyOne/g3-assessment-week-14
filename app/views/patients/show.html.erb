@@ -2,7 +2,6 @@
 
 <h2>Prescriptions</h2>
 <a class="new-prescription-link" href="<%= new_patient_prescription_path(@patient.id) %>">Add Prescription</a>
-<!--<h1>@medication.id.class</h1>-->
 <h2>Medications</h2>
 <table class="table">
   <thead>
@@ -14,12 +13,11 @@
   </thead>
   <tbody>
   <tr>
-        <% @prescriptions.each do |prescription| %>
-        <%= prescription.id.class %>
-            <td><%= @medications.find_by(id: prescription.medication_id).name %></td>
-            <td><%= prescription.dosage %>/<%= prescription.schedule %></td>
-            <td><%= prescription.start_on %></td>
-        <% end %>
+    <% @prescriptions.each do |prescription| %>
+        <td><%= @medications.find_by(id: prescription.medication_id).name %></td>
+        <td><%= prescription.dosage %>/<%= prescription.schedule %></td>
+        <td><%= prescription.start_on %></td>
+    <% end %>
   </tr>
   </tbody>
 </table>
